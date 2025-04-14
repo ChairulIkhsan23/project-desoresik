@@ -1,9 +1,9 @@
 <nav id="sidebar" class="sidebar js-sidebar">
     <div class="sidebar-content js-simplebar">
     <a class="sidebar-brand" href="{{ route('admin.dashboard') }}">
-        <img src="{{ asset('assets/img/icons/desoresik-logo.png') }}') }}" alt="Logo 1" style="height: 30px;">
-        <img src="{{ asset('assets/img/icons/logo-indramayu.png') }}" alt="Logo 2" style="height: 30px;">
-        <img src="{{ asset('assets/img/icons/less-waste.png') }}" alt="Logo 3" style="height: 30px;">
+        <img src="{{ asset('assets/img/icons/logo-desoresik.png') }}" alt="Logo 1" style="height: 30px;">
+        <img src="{{ asset('assets/img/icons/logo-indramayu.png') }}" alt="Logo 2" style="height: 40px;">
+        <img src="{{ asset('assets/img/icons/less-waste.png') }}" alt="Logo 3" style="height: 40px;">
     </a>
         <ul class="sidebar-nav">
             <li class="sidebar-header">

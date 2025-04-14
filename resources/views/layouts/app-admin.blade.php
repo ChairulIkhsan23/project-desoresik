@@ -32,10 +32,10 @@
 
 <body>
     <div class="wrapper">
-        @include('layouts.partials.sidebar')
+        @include('layouts.partials-admin.sidebar')
 
         <div class="main">
-            @include('layouts.partials.navbar')
+            @include('layouts.partials-admin.navbar')
 
             <main class="content">
                 <div class="container-fluid p-0">
@@ -43,7 +43,7 @@
                 </div>
             </main>
 
-            @include('layouts.partials.footer')
+            @include('layouts.partials-admin.footer')
         </div>
     </div>
 
