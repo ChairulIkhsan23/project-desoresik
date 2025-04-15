@@ -15,6 +15,7 @@
     <title>@yield('title', 'AdminKit Demo')</title>
 
     <!-- Tambahkan di HEAD -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
     <!-- Bootstrap 5 CSS -->

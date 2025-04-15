@@ -121,6 +121,71 @@
         </div>
         
         <div class="card">
+    <div class="card-body">
+        <!-- Chart Section -->
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>Grafik Timbulan Sampah (Ton)</span>
+                        <select class="form-select form-select-sm" style="width: 150px;" id="chartFilter">
+                            <option value="day">Harian</option>
+                            <option value="week">Mingguan</option>
+                            <option value="month">Bulanan</option>
+                        </select>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="wasteChart" height="250"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        Ringkasan Sampah
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div>
+                                <h6 class="text-muted">Total Bulan Ini</h6>
+                                <h3 class="mb-0">1,240.5 <small class="text-muted">Ton</small></h3>
+                            </div>
+                            <div class="avatar">
+                                <span class="avatar-initial rounded bg-label-primary">
+                                    <i class="bi bi-trash"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <div>
+                                <h6 class="text-muted">Rata-rata Harian</h6>
+                                <h3 class="mb-0">41.35 <small class="text-muted">Ton</small></h3>
+                            </div>
+                            <div class="avatar">
+                                <span class="avatar-initial rounded bg-label-warning">
+                                    <i class="bi bi-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h6 class="text-muted">Tertinggi</h6>
+                                <h3 class="mb-0">120.9 <small class="text-muted">Ton</small></h3>
+                                <small class="text-muted">15 Apr 2025</small>
+                            </div>
+                            <div class="avatar">
+                                <span class="avatar-initial rounded bg-label-danger">
+                                    <i class="bi bi-graph-up-arrow"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table Section -->
+        <div class="card">
             <div class="card-body p-0">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped align-middle mb-0">
@@ -130,6 +195,7 @@
                                 <th>Status Laporan</th>
                                 <th>Foto</th>
                                 <th>Catatan</th>
+                                <th>Timbulan Sampah/Ton</th>
                                 <th>Waktu Lapor</th>
                             </tr>
                         </thead>
@@ -141,6 +207,7 @@
                                     <img src="{{ asset('assets/img/photos/container-kosong.jpg') }}" width="60" height="60" style="object-fit: cover;" class="rounded">
                                 </td>
                                 <td>Tugas selesai dengan aman, tidak ada kendala.</td>
+                                <td>100.900</td>
                                 <td>2025-04-15 09:20</td>
                             </tr>
                         </tbody>
@@ -148,11 +215,110 @@
                 </div>
             </div>
         </div>
-
     </div>
+</div>
+
+</div>
 @endsection
 
 @section('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Sample data for the chart
+        const wasteData = {
+            day: {
+                labels: ['1 Apr', '2 Apr', '3 Apr', '4 Apr', '5 Apr', '6 Apr', '7 Apr', '8 Apr', '9 Apr', '10 Apr', '11 Apr', '12 Apr', '13 Apr', '14 Apr', '15 Apr'],
+                data: [45.2, 38.7, 42.1, 50.3, 55.6, 48.9, 52.4, 60.1, 58.3, 62.7, 70.2, 75.5, 120.9, 75.5, 100.9]
+            },
+            week: {
+                labels: ['Minggu 1', 'Minggu 2', 'Minggu 3', 'Minggu 4'],
+                data: [180.4, 210.7, 245.3, 320.1]
+            },
+            month: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
+                data: [980.5, 1020.3, 1105.7, 1240.5, 0, 0, 0, 0, 0, 0, 0, 0]
+            }
+        };
+
+        // Initialize chart
+        const ctx = document.getElementById('wasteChart').getContext('2d');
+        const wasteChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: wasteData.day.labels,
+                datasets: [{
+                    label: 'Timbulan Sampah (Ton)',
+                    data: wasteData.day.data,
+                    backgroundColor: '#00a854',
+                    borderColor: '#008a46',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y.toFixed(1) + ' Ton';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Ton'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Tanggal'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Filter chart data
+        document.getElementById('chartFilter').addEventListener('change', function() {
+            const period = this.value;
+            wasteChart.data.labels = wasteData[period].labels;
+            wasteChart.data.datasets[0].data = wasteData[period].data;
+            wasteChart.update();
+        });
+
+        // Highlight row on hover
+        const tableRows = document.querySelectorAll('tbody tr');
+        tableRows.forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                const wasteAmount = parseFloat(this.cells[4].textContent);
+                highlightChart(wasteAmount);
+            });
+            row.addEventListener('mouseleave', function() {
+                resetChartHighlight();
+            });
+        });
+
+        function highlightChart(value) {
+            wasteChart.data.datasets[0].backgroundColor = wasteChart.data.datasets[0].data.map(d => 
+                d === value ? '#ff5722' : '#00a854'
+            );
+            wasteChart.update();
+        }
+
+        function resetChartHighlight() {
+            wasteChart.data.datasets[0].backgroundColor = '#00a854';
+            wasteChart.update();
+        }
+    });
+</script>
     <script>
         feather.replace();
     </script>
