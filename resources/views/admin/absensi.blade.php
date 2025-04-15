@@ -23,7 +23,7 @@
                     <option>Rabu</option>
                     <option>Kamis</option>
                     <option>Jumat</option>
-                    <option>Sabtu</option>
+                    <option>Jumat</option>
                 </select>
             </li>
             <li class="mb-2">
