@@ -7,7 +7,7 @@
 
     <div class="container-fluid mt-3">
 
-        {{-- Tombol + Filter --}}
+        {{-- Tombol Tambah Jadwal --}}
         <div class="btn-group h3 mb-3"">
             <a href="#" class="btn btn-primary btn-sm">
                 <i data-feather="plus"></i> Tambah Jadwal
