@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\TpsController as AdminTpsController;
 use App\Http\Controllers\Admin\JadwalPengangkutanController as AdminJadwalController;
 use App\Http\Controllers\Admin\KendalaController as AdminKendalaController;
 use App\Http\Controllers\Admin\AbsensiController as AdminAbsensiController;
+use App\Http\Controllers\Admin\ArmadaController as AdminArmadaController;
 
 // PETUGAS Controllers
 use App\Http\Controllers\Petugas\DashboardController as PetugasDashboardController;
@@ -34,6 +35,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/jadwal-pengangkutan', [AdminJadwalController::class, 'index'])->name('jadwal-pengangkutan');
     Route::get('/laporan-kendala', [AdminKendalaController::class, 'index'])->name('laporan-kendala');
     Route::get('/absensi', [AdminAbsensiController::class, 'index'])->name('absensi');
+    Route::get('/data-armada', [AdminArmadaController::class, 'index'])->name('data-armada');
 });
 
 // =====================

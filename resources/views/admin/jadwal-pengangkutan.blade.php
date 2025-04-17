@@ -24,6 +24,7 @@
                                 <th style="width: 50px">No</th>
                                 <th>Nama TPS</th>
                                 <th>Petugas</th>
+                                <th>No Kendaraan</th>
                                 <th>Tanggal</th>
                                 <th>Waktu</th>
                                 <th>Status</th>
@@ -35,6 +36,7 @@
                                 <td>1</td>
                                 <td>TPS Pasar Baru</td>
                                 <td>Rina Kusuma</td>
+                                <td>E 2016 UC</td>
                                 <td>2025-04-15</td>
                                 <td>08:00</td>
                                 <td><span class="badge bg-warning text-dark">Diproses</span></td>
