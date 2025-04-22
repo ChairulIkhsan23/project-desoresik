@@ -46,7 +46,7 @@ Route::prefix('petugas')->name('petugas.')->group(function () {
     Route::get('/profil', [ProfilController::class, 'index'])->name('profil-petugas');
     Route::get('/lokasi-tps', [PetugasTpsController::class, 'index'])->name('lokasi-tps');
     Route::get('/jadwal-pengangkutan', [PetugasJadwalController::class, 'index'])->name('jadwal-pengangkutan');
-    Route::get('/laporan-pengangkutan', [PetugasLaporanController::class, 'index'])->name('jadwal-pengangkutan');
+    Route::get('/laporan-pengangkutan', [PetugasLaporanController::class, 'index'])->name('laporan-pengangkutan');
     Route::get('/laporan-kendala', [PetugasKendalaController::class, 'index'])->name('laporan-kendala');
     Route::get('/absensi', [PetugasAbsensiController::class, 'index'])->name('absensi');
 });
