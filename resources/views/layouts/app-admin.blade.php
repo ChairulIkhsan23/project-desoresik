@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="{{ asset('img/icons/icon-48x48.png') }}" />
 
-    <title>@yield('title', 'AdminKit Demo')</title>
+    <title>@yield('title', 'App Admin Blade')</title>
 
     <!-- Tambahkan di HEAD -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
