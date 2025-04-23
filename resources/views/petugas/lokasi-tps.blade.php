@@ -1,6 +1,6 @@
 @extends('layouts.app-admin')
 
-@section('title', 'Lokasi TPS)
+@section('title', 'Lokasi TPS')
 
 @section('content')
     

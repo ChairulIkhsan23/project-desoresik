@@ -1,6 +1,6 @@
 @extends('layouts.app-admin')
 
-@section('title', 'Profil Petugas)
+@section('title', 'Profil Petugas')
 
 @section('content')
     
