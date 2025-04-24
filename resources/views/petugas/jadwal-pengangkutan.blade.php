@@ -1,4 +1,4 @@
-@extends('layouts.app-admin')
+@extends('layouts.app-petugas')
 
 @section('title', 'Jadwal pengangkutan')
 

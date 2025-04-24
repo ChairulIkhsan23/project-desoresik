@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="{{ asset('img/icons/icon-48x48.png') }}" />
 
-    <title>@yield('title', 'App Petugas Blade')</title>
+    <title>@yield('title', 'App Admin Blade')</title>
 
     <!-- Tambahkan di HEAD -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -23,7 +23,7 @@
     
     <!-- AdminKit CSS (should come after Bootstrap) -->
     <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/custom-admin.css') }}" rel="stylesheet">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -33,10 +33,10 @@
 
 <body>
     <div class="wrapper">
-        @include('layouts.partials-petugas.sidebar')
+        @include('layouts.partials-admin.sidebar')
 
         <div class="main">
-            @include('layouts.partials-petugas.navbar')
+            @include('layouts.partials-admin.navbar')
 
             <main class="content">
                 <div class="container-fluid p-0">
@@ -44,7 +44,7 @@
                 </div>
             </main>
 
-            @include('layouts.partials-petugas.footer')
+            @include('layouts.partials-admin.footer')
         </div>
     </div>
 

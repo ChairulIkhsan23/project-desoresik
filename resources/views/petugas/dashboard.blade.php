@@ -3,7 +3,7 @@
 @section('title', 'Dashboard Umum')
 
 @section('content')
-    
+
 @endsection
 
 @section('scripts')
