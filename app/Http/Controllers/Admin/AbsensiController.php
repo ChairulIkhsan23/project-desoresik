@@ -48,6 +48,6 @@ class AbsensiController extends Controller
             ],
         ];
 
-        return view('admin.absensi', compact('hadir', 'izin', 'sakit', 'absensiList'));
+        return view('admin.absensi.index', compact('hadir', 'izin', 'sakit', 'absensiList'));
     }
 }

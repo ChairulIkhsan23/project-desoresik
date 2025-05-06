@@ -104,21 +104,34 @@
         <div class="mt-3 mb-4">
             <nav aria-label="Page navigation">
                 <ul class="pagination justify-content-end">
-                    <li class="page-item">
-                        <a class="page-link btn btn-primary btn-sm me-1" href="#">Previous</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link btn btn-outline-primary btn-sm me-1" href="#">1</a>
-                    </li>
-                    <li class="page-item active">
-                        <a class="page-link btn btn-primary btn-sm me-1" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link btn btn-outline-primary btn-sm me-1" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link btn btn-primary btn-sm" href="#">Next</a>
-                    </li>
+                    <!-- Previous Page Link -->
+                    @if ($petugas->onFirstPage())
+                        <li class="page-item disabled">
+                            <a class="page-link btn btn-primary btn-sm me-1" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+                    @else
+                        <li class="page-item">
+                            <a class="page-link btn btn-primary btn-sm me-1" href="{{ $petugas->previousPageUrl() }}">Previous</a>
+                        </li>
+                    @endif
+
+                    <!-- Pagination Links -->
+                    @foreach ($petugas->getUrlRange(1, $petugas->lastPage()) as $page => $url)
+                        <li class="page-item {{ $petugas->currentPage() == $page ? 'active' : '' }}">
+                            <a class="page-link btn {{ $petugas->currentPage() == $page ? 'btn-primary' : 'btn-outline-primary' }} btn-sm me-1" href="{{ $url }}">{{ $page }}</a>
+                        </li>
+                    @endforeach
+
+                    <!-- Next Page Link -->
+                    @if ($petugas->hasMorePages())
+                        <li class="page-item">
+                            <a class="page-link btn btn-primary btn-sm" href="{{ $petugas->nextPageUrl() }}">Next</a>
+                        </li>
+                    @else
+                        <li class="page-item disabled">
+                            <a class="page-link btn btn-primary btn-sm" href="#" tabindex="-1" aria-disabled="true">Next</a>
+                        </li>
+                    @endif
                 </ul>
             </nav>
         </div>

@@ -9,6 +9,6 @@ class JadwalPengangkutanController extends Controller
 {
     public function index()
     {
-        return view('admin.jadwal-pengangkutan');
+        return view('admin.jadwal-pengangkutan.index');
     }
 }

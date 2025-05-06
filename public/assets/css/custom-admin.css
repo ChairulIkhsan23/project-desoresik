@@ -1,0 +1,55 @@
+/* Custom CSS Sidebar */
+
+/* bg-sidebar */
+#sidebar,
+#sidebar .sidebar-content,
+#sidebar .simplebar-wrapper,
+#sidebar .simplebar-content-wrapper,
+#sidebar .simplebar-content,
+#sidebar .simplebar-offset,
+#sidebar .simplebar-mask {
+    background-color: #5A825A !important;
+}
+
+/* warna text */
+.sidebar .sidebar-link {
+    color: #f8f9fa; /* atau bisa pakai #f8f9fa kalau mau agak soft */
+}
+
+/* warna icon */
+.sidebar .sidebar-link i,
+.sidebar .sidebar-link svg {
+    color: #f8f9fa;
+}
+
+/* remove bg-dongker item */
+.sidebar-item {
+    background-color: transparent !important;
+}
+
+/* remove bg-dongker link */
+.sidebar-link {
+    background-color: transparent !important;
+}
+
+/* efek hover */
+.sidebar-item.active .sidebar-link,
+.sidebar-link:hover {
+    background-color: #80B93C; /* efek hover biru lembut */
+    border-left: 5px solid #80B93C; /* garis biru di kiri */
+}
+
+.sidebar .sidebar-item.active > .sidebar-link {
+    border-left: 5px solid #80B93C;
+    background-image: none !important;
+}
+
+.sidebar-brand {
+    background-color: #6F906F; /* Warna hijau */
+    border-radius: 1rem; /* Rounded corner */
+    padding: 0.5rem; /* Padding */
+    margin: 1rem 1rem 0 1rem; 
+    text-align: center
+}
+
+

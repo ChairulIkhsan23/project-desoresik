@@ -32,8 +32,8 @@
                     <a href="#" class="text-muted fs-4"><i data-feather="globe"></i></a>
                 </div>
                 <div class="mt-3">
-				<img src="{{ asset('assets/img/photos/dlh.jpg') }}"
-                    style="width: 30px; height: 30px; object-fit: cover;" 
+				<img src="{{ asset('assets/img/photos/logo-klhk.png') }}"
+                    style="width: 40px; height: 40px; object-fit: cover;" 
                     alt="Profil" />
                 </a>
                     <p class="text-muted small">Dinas Lingkungan Hidup Kabupaten Indramayu</p>

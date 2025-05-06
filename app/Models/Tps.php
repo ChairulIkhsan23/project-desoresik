@@ -8,8 +8,6 @@ class Tps extends Model
 {
     protected $table = 'tps';
 
-    public function jadwal()
-    {
-        return $this->hasMany(JadwalPengangkutan::class);
-    }
+    protected $fillable = ['nama_tps', 'alamat', 'latitude', 'longitude'];
+
 }

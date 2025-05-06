@@ -9,6 +9,6 @@ class KendalaController extends Controller
 {
     public function index()
     {
-        return view('admin.laporan-kendala');
+        return view('admin.kendala.index');
     }
 }

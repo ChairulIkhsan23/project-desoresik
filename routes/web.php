@@ -29,13 +29,44 @@ Route::get('/', function () {
 // ADMIN Routes
 // =====================
 Route::prefix('admin')->name('admin.')->group(function () {
+    // Dashboard
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
-    Route::get('/data-petugas', [PetugasController::class, 'index'])->name('data-petugas');
-    Route::get('/lokasi-tps', [AdminTpsController::class, 'index'])->name('lokasi-tps');
+
+    // CRUD Petugas
+    Route::get('/petugas', [PetugasController::class, 'index'])->name('petugas.index');
+    Route::get('/petugas/create', [PetugasController::class, 'create'])->name('petugas.create');
+    Route::post('/petugas', [PetugasController::class, 'store'])->name('petugas.store');
+    Route::get('/petugas/{petugas}/edit', [PetugasController::class, 'edit'])->name('petugas.edit');
+    Route::put('/petugas/{petugas}', [PetugasController::class, 'update'])->name('petugas.update');
+    Route::delete('/petugas/{petugas}', [PetugasController::class, 'destroy'])->name('petugas.destroy');
+
+
+    // Halaman Data TPS
+    Route::get('/tps', [AdminTpsController::class, 'index'])->name('tps.index');
+    Route::get('/tps/create', [AdminTpsController::class, 'create'])->name('tps.create');
+    Route::post('/tps', [AdminTpsController::class, 'store'])->name('tps.store');
+    Route::get('/tps/{tp}/edit', [AdminTpsController::class, 'edit'])->name('tps.edit');
+    Route::put('/tps/{tp}', [AdminTpsController::class, 'update'])->name('tps.update');
+    Route::delete('/tps/{tp}', [AdminTpsController::class, 'destroy'])->name('tps.destroy');
+    Route::get('/tps/data', [AdminTpsController::class, 'getTpsData'])->name('tps.data');
+
+
+    // Halaman Jadwal Pengangkutan
     Route::get('/jadwal-pengangkutan', [AdminJadwalController::class, 'index'])->name('jadwal-pengangkutan');
+
+    // Halaman Laporan Kendala
     Route::get('/laporan-kendala', [AdminKendalaController::class, 'index'])->name('laporan-kendala');
-    Route::get('/absensi', [AdminAbsensiController::class, 'index'])->name('absensi');
-    Route::get('/data-armada', [AdminArmadaController::class, 'index'])->name('data-armada');
+
+    // Halaman Absensi
+    Route::get('/absensi', [AdminAbsensiController::class, 'index'])->name('absensi.index');
+
+    // Halaman Data Armada
+    Route::get('/armada', [AdminArmadaController::class, 'index'])->name('armada.index');
+    Route::get('/armada/create', [AdminArmadaController::class, 'create'])->name('armada.create');
+    Route::post('/armada', [AdminArmadaController::class, 'store'])->name('armada.store');
+    Route::get('/armada/{armada}/edit', [AdminArmadaController::class, 'edit'])->name('armada.edit');
+    Route::put('/armada/{armada}', [AdminArmadaController::class, 'update'])->name('armada.update');
+    Route::delete('/armada/{armada}', [AdminArmadaController::class, 'destroy'])->name('armada.destroy');
 });
 
 // =====================

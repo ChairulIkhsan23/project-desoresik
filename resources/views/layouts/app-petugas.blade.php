@@ -20,10 +20,12 @@
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- AdminKit CSS (should come after Bootstrap) -->
     <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/custom-admin.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/custom-petugas.css') }}" rel="stylesheet">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -33,10 +35,10 @@
 
 <body>
     <div class="wrapper">
-        @include('layouts.partials-admin.sidebar')
+    @include('layouts.partials-petugas.sidebar')
 
         <div class="main">
-            @include('layouts.partials-admin.navbar')
+            @include('layouts.partials-petugas.navbar')
 
             <main class="content">
                 <div class="container-fluid p-0">
@@ -44,7 +46,7 @@
                 </div>
             </main>
 
-            @include('layouts.partials-admin.footer')
+            @include('layouts.partials-petugas.footer')
         </div>
     </div>
 

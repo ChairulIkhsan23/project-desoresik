@@ -8,11 +8,6 @@ class JadwalPengangkutan extends Model
 {
     protected $table = 'jadwal_pengangkutan';
 
-    public function tps()
-    {
-        return $this->belongsTo(Tps::class);
-    }
-
     public function petugas()
     {
         return $this->belongsTo(User::class, 'petugas_id');
