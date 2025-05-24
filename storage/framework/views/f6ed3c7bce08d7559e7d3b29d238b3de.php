@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Tambah Petugas'); ?>
 
 <?php $__env->startSection('content'); ?>

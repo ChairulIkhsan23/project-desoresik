@@ -1,6 +1,4 @@
-
-
-<?php $__env->startSection('title', 'Edit Data Petugas'); ?>
+<?php $__env->startSection('title', 'Edit Petugas'); ?>
 
 <?php $__env->startSection('content'); ?>
     <h1 class="h3 mb-3"><strong>Edit</strong> Petugas</h1>
